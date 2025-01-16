@@ -56,7 +56,7 @@ describe('FinalComponent', () => {
 		component.ngOnDestroy();
 	});
 
-	it('should create ReviewComponent==============================', () => {
+	it('should create ReviewComponent', () => {
 		expect(component).toBeTruthy();
 	});
 

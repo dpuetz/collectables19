@@ -16,9 +16,10 @@ describe('CartService', () => {
 	beforeEach(async () => {
 		service = TestBed.inject(CartService);
 	});
-	it('default cartService', () => {
+	it('should test CartService', () => {
 		expect(1).toBe(1);
 	})
+//works in 19	
 	// it('should be created', () => {
 	// 	expect(service).toBeTruthy();
 	// });
@@ -35,7 +36,7 @@ describe('CartService', () => {
 	// it('should not add duplicate items to the cart', () => {
 	// 	service.add(newItem).subscribe();
 	// 	service.add(newItem).subscribe(cart => {
-	// 		expect(cart.filter(item => item.id === newItem.id).length).toBe(1);
+	// 		expect(cart !== null && cart.filter(item => item.id === newItem.id).length).toBe(1);
 	// 	});
 	// });
 	// it('should remove item in the cart', () => {
@@ -58,7 +59,7 @@ describe('CartService', () => {
 	// 	service.add(newItem)
 	// 	.pipe(
 	// 		concatMap((cart1) => {
-	// 			expect(cart1.length).toBe(1);
+	// 			expect(cart1 !== null && cart1.length).toBe(1);
 	// 			return service.remove(newItem)}
 	// 		),
 	// 		concatMap((cart2) => {

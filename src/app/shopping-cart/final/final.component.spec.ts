@@ -42,9 +42,6 @@ describe('FinalComponent', () => {
 		//inject services into testBed
 		cartService = TestBed.inject(CartService) as jasmine.SpyObj<CartService>;
 		router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
-
-		// // Mock the return values
-		// cartService.add.and.returnValue(of(null));
 	});
 
 	afterEach(() => {

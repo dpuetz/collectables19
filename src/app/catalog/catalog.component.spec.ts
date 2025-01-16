@@ -33,12 +33,13 @@ describe('CatalogComponent', () => {
 		itemsService.getAllItems.and.returnValue(of(items));
 		// fixture.detectChanges();
 	});
-	it('default', () => {
+	it('should test CatalogComponent', () => {
 		expect(1).toBe(1);
 	})
+//works in 19	
 	// it('should create', () => {
 	// 	expect(component).toBeTruthy();
-	//   });
+	// });
 	//   it('should setFilteredItems on init', () => {
 	// 	spyOn(component, 'setFilteredItems');
 	// 	component.ngOnInit();

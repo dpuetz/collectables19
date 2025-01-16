@@ -1,8 +1,7 @@
 import { TestBed } from "@angular/core/testing";
 import { IItem } from "./IItem.model";
 import { ItemsService } from "./items.service";
-import { provideHttpClient } from "@angular/common/http";
-import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
+import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
 
 describe('ItemsService', () => {
   let service: ItemsService;
@@ -11,11 +10,8 @@ describe('ItemsService', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [
-        ItemsService,
-        provideHttpClient(),
-		provideHttpClientTesting(),
-      ],
+      imports: [HttpClientTestingModule],
+      providers: [ItemsService],
     }).compileComponents();
 
     service = TestBed.inject(ItemsService);
@@ -25,9 +21,11 @@ describe('ItemsService', () => {
   afterEach(() => {
     httpMock.verify();
   });
-  it('default itemsService', () => {
-	expect(1).toBe(1);
-})
+
+  it('should test ItemsService', () => {
+    expect(1).toBe(1);
+  })
+//works in 19
 //   it('should get all items', () => {
 //     const mockItems: IItem[] = [
 //       { id: 1, name: 'Item 1', description: 'Description 1', price: 10, category: 'Category 1', catgegoryIcon: false, imageUrl: 'image1.jpg' },

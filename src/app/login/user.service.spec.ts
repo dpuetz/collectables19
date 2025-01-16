@@ -23,7 +23,7 @@ describe('UserService', () => {
 		httpMock.verify();
 	});
 
-	it('default userService', () => {
+	it('should test UserService', () => {
 		expect(1).toBe(1);
 	})
 

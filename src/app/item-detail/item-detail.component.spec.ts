@@ -63,7 +63,7 @@ describe('ItemDetailComponent', () => {
 		component.ngOnDestroy();
 	});
 
-	it('should create', () => {
+	it('should test ItemDetailComponent', () => {
 		expect(component).toBeTruthy();
 	});
 

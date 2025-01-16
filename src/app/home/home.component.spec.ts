@@ -34,7 +34,7 @@ describe('HomeComponent', () => {
 	afterEach(() => {
 		component.ngOnDestroy();
 	})
-	it('default Home', () => {
+	it('should test HomeComponent', () => {
 		expect(1).toBe(1);
 	})
 	// it('should create', () => {

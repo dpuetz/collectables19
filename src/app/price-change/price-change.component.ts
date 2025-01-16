@@ -44,8 +44,9 @@ export class PriceChangeComponent implements OnInit, OnDestroy {
 	}
 
 	save() {
-		console.log(this.selectedItem, 'saving...');
+
 		this.subscriptions.add(
+			
 			this.itemsService.saveItem(this.selectedItem).subscribe({
 				next: (item) => {
 					this.setInitialPrice();
