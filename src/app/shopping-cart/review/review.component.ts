@@ -20,7 +20,7 @@ export class ReviewComponent implements OnInit, OnDestroy {
 	cartTotal: number = 0;
 	showNoItems: boolean = false;
 	subscriptions: Subscription = new Subscription();
-	urlNext:string = '/cart/final';
+	urlNext: string = '/cart/final';
 
 	constructor(
 		private cartService: CartService,

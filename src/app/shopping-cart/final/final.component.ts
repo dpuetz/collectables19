@@ -7,7 +7,7 @@ import { IItem } from '../../common/IItem.model';
 import { CartService } from '../../common/cart.service';
 
 @Component({
-	standalone:true,
+	standalone: true,
 	selector: 'app-final',
 	imports: [CommonModule, NgOptimizedImage, FormsModule],
 	templateUrl: './final.component.html',

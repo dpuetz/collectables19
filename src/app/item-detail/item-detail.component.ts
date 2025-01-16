@@ -41,7 +41,6 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
 	buy() {
 		this.subscriptions.add(
 			this.cartService.add(this.item).subscribe((cart) => {
-				console.log(cart, 'item detail buy cart');
 				this.router.navigate(['/catalog']);
 			}));
 	}

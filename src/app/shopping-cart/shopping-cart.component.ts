@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { SideMenuComponent } from './side-menu/side-menu.component';
 
 @Component({
-	standalone:true,
+	standalone: true,
 	selector: 'app-shopping-cart',
 	imports: [RouterOutlet, SideMenuComponent],
 	templateUrl: './shopping-cart.component.html',

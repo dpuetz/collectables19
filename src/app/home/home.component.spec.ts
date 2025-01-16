@@ -37,23 +37,23 @@ describe('HomeComponent', () => {
 	it('should test HomeComponent', () => {
 		expect(1).toBe(1);
 	})
-	// it('should create', () => {
-	// 	expect(component).toBeTruthy();
-	// });
-	// it('should get items on init', () => {
-	// 	fixture.detectChanges();
-	// 	expect(component.items.length).toBe(3);
-	// 	expect(component.items).toEqual(mockItems);
-	// })
-	// it('should unsubscribe on ngOnDestroy', () => {
-	// 	spyOn(component.subscriptions, 'unsubscribe');
-	// 	component.ngOnDestroy();
-	// 	expect(component.subscriptions.unsubscribe).toHaveBeenCalled();
-	// });
-	// it('should display filtered items in the template', () => {
-	// 	component.items = mockItems;
-	// 	fixture.detectChanges();
-	// 	const compiled = fixture.nativeElement;
-	// 	expect(compiled.querySelectorAll('.itemImage').length).toBe(mockItems.length);
-	// });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
+	it('should get items on init', () => {
+		fixture.detectChanges();
+		expect(component.items.length).toBe(3);
+		expect(component.items).toEqual(mockItems);
+	})
+	it('should unsubscribe on ngOnDestroy', () => {
+		spyOn(component.subscriptions, 'unsubscribe');
+		component.ngOnDestroy();
+		expect(component.subscriptions.unsubscribe).toHaveBeenCalled();
+	});
+	it('should display filtered items in the template', () => {
+		component.items = mockItems;
+		fixture.detectChanges();
+		const compiled = fixture.nativeElement;
+		expect(compiled.querySelectorAll('.itemImage').length).toBe(mockItems.length);
+	});
 });

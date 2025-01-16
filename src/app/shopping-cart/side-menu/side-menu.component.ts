@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
-	standalone:true,
+	standalone: true,
 	selector: 'app-side-menu',
 	imports: [CommonModule, FormsModule],
 	templateUrl: './side-menu.component.html',

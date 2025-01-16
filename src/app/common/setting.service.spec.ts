@@ -10,12 +10,11 @@ describe('SettingsService', () => {
 	it('should test SettingsService', () => {
 		expect(1).toBe(1);
 	})
-//works in 19
-	// it('should set and get LoginGoNextUrl', () => {
-	// 	service.LoginGoNextUrl = '/catalog';
-	// 	const url = service.LoginGoNextUrl;
-	// 	expect(url).toBe('/catalog');
-	// });
+	it('should set and get LoginGoNextUrl', () => {
+		service.LoginGoNextUrl = '/catalog';
+		const url = service.LoginGoNextUrl;
+		expect(url).toBe('/catalog');
+	});
 
 });
 

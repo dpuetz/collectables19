@@ -4,7 +4,7 @@ import { IItem } from '../common/IItem.model';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 @Component({
-	standalone:true,
+	standalone: true,
 	selector: 'app-items-list',
 	imports: [CommonModule, NgOptimizedImage],
 	templateUrl: './items-list.component.html',

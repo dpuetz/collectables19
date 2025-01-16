@@ -13,28 +13,28 @@ import { SettingsService } from '../common/setting.service';
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 	credentials: IUserCredentials = { email: '', password: '' };
 	showLogInError: boolean = false;
 	showCartMessage: boolean = false;
 	@ViewChild('logInForm') logInForm!: NgForm;
 	nextUrl: string = '';
-	catalogPath:string = '/catalog';
-	cartPath:string='/cart/final';
+	catalogPath: string = '/catalog';
+	cartPath: string = '/cart/final';
 
 	constructor(
 		private userService: UserService,
 		private router: Router,
 		private settingsService: SettingsService,
-	) {}
-	
-	ngOnInit() {		
+	) { }
+
+	ngOnInit() {
 		this.nextUrl = this.settingsService.LoginGoNextUrl ? this.settingsService.LoginGoNextUrl : this.catalogPath;
 		if (this.nextUrl == this.cartPath) {
 			this.showCartMessage = true;
 		}
 	}
-	
+
 	logIn() {
 		this.showLogInError = false;
 		if (this.userService.logIn(this.credentials)) {
@@ -52,5 +52,5 @@ export class LoginComponent implements OnInit{
 	navigate() {
 		this.settingsService.LoginGoNextUrl = '';
 		this.router.navigate([this.nextUrl]);
-	}	
+	}
 }

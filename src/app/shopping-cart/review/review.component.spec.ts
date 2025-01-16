@@ -36,7 +36,7 @@ describe('FinalComponent', () => {
 			providers: [
 				{ provide: CartService, useValue: cartServiceSpy },
 				{ provide: SettingsService, useValue: settingsServiceSpy },
-				{ provide: Router, useValue: routerSpy },				
+				{ provide: Router, useValue: routerSpy },
 				{ provide: ActivatedRoute, useValue: {} },
 			],
 			schemas: [NO_ERRORS_SCHEMA]
@@ -60,63 +60,63 @@ describe('FinalComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	// it('should have default values at start', () => {
-	// 	expect(component.cart).toEqual([]);
-	// 	expect(component.cartTotal).toBe(0);
-	// 	expect(component.showNoItems).toBeFalse();
-	// });
+	it('should have default values at start', () => {
+		expect(component.cart).toEqual([]);
+		expect(component.cartTotal).toBe(0);
+		expect(component.showNoItems).toBeFalse();
+	});
 
-	// it('should set cart items on ngOnInit', () => {
-	// 	cartService.getCart.and.returnValue(of(mockData));
-	// 	component.ngOnInit();
-	// 	expect(component.cart.length).toBe(mockData.length);
-	// });
+	it('should set cart items on ngOnInit', () => {
+		cartService.getCart.and.returnValue(of(mockData));
+		component.ngOnInit();
+		expect(component.cart.length).toBe(mockData.length);
+	});
 
-	// it('should set showNoItems to false', () => {
-	// 	component.showNoItems = true;
-	// 	cartService.getCart.and.returnValue(of(mockData));
-	// 	component.ngOnInit();
-	// 	expect(component.showNoItems).toBe(false);
-	// });
+	it('should set showNoItems to false', () => {
+		component.showNoItems = true;
+		cartService.getCart.and.returnValue(of(mockData));
+		component.ngOnInit();
+		expect(component.showNoItems).toBe(false);
+	});
 
-	// it('should remove item', () => {
-	// 	const mockDataMinusOne = mockData.filter(d=>d.id!==1);
-	// 	cartService.remove.and.returnValue(of(mockDataMinusOne));
-	// 	component.remove(mockItem);
-	// 	expect(cartService.remove).toHaveBeenCalledWith(mockItem);
-	// 	expect(component.cart).toEqual(mockDataMinusOne);
-	// });	
+	it('should remove item', () => {
+		const mockDataMinusOne = mockData.filter(d => d.id !== 1);
+		cartService.remove.and.returnValue(of(mockDataMinusOne));
+		component.remove(mockItem);
+		expect(cartService.remove).toHaveBeenCalledWith(mockItem);
+		expect(component.cart).toEqual(mockDataMinusOne);
+	});
 
-	// it('should navigate when checkout is called', () => {
-	// 	settingsService.LoginGoNextUrl = '';
-	// 	component.review();
-	// 	expect(settingsService.LoginGoNextUrl).toBe(component.urlNext);
-	// 	expect(router.navigate).toHaveBeenCalledOnceWith([component.urlNext]);
-	// });	
+	it('should navigate when checkout is called', () => {
+		settingsService.LoginGoNextUrl = '';
+		component.review();
+		expect(settingsService.LoginGoNextUrl).toBe(component.urlNext);
+		expect(router.navigate).toHaveBeenCalledOnceWith([component.urlNext]);
+	});
 
-	// it('should have subscriptions and unsubscribe', () => {
-	// 	cartService.getCart.and.returnValue(of([]));
-	// 	const addSpy = spyOn(component.subscriptions, 'add').and.callThrough();
-	// 	const unsubscribeSpy =	spyOn(component.subscriptions, 'unsubscribe').and.callThrough();
-	// 	component.ngOnInit();
-	// 	expect(addSpy).toHaveBeenCalled();
-	// 	expect(addSpy.calls.count()).toBeGreaterThan(0); 
-	// 	component.ngOnDestroy();
-	// 	expect(unsubscribeSpy).toHaveBeenCalled();
-	// });
+	it('should have subscriptions and unsubscribe', () => {
+		cartService.getCart.and.returnValue(of([]));
+		const addSpy = spyOn(component.subscriptions, 'add').and.callThrough();
+		const unsubscribeSpy = spyOn(component.subscriptions, 'unsubscribe').and.callThrough();
+		component.ngOnInit();
+		expect(addSpy).toHaveBeenCalled();
+		expect(addSpy.calls.count()).toBeGreaterThan(0);
+		component.ngOnDestroy();
+		expect(unsubscribeSpy).toHaveBeenCalled();
+	});
 
-	// it('should show Check Out button if have items in cart', fakeAsync( () => {
-	// 	cartService.getCart.and.returnValue(of(mockData));
-	// 	fixture.detectChanges();
-	// 	tick();
-	// 	const buttons = document.querySelectorAll('button');
-	// 	let checkOutButton = null;
-	// 	buttons.forEach(button => {
-	// 		if (button.textContent && button.textContent.trim() === 'Check Out') {
-	// 			checkOutButton = button;
-	// 		}
-	// 	});
-	// 	expect(checkOutButton).not.toBeNull();
-	// }));	
+	it('should show Check Out button if have items in cart', fakeAsync(() => {
+		cartService.getCart.and.returnValue(of(mockData));
+		fixture.detectChanges();
+		tick();
+		const buttons = document.querySelectorAll('button');
+		let checkOutButton = null;
+		buttons.forEach(button => {
+			if (button.textContent && button.textContent.trim() === 'Check Out') {
+				checkOutButton = button;
+			}
+		});
+		expect(checkOutButton).not.toBeNull();
+	}));
 
 });

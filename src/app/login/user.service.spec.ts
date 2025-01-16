@@ -27,52 +27,50 @@ describe('UserService', () => {
 		expect(1).toBe(1);
 	})
 
-	// it('should be created', () => {
-	// 	expect(service).toBeTruthy();
-	// });
+	it('should be created', () => {
+		expect(service).toBeTruthy();
+	});
 
-	// describe('GetUser', ()=>{
-	// 	it('should return null if no user', ()=>{
-	// 		service.getUser().subscribe( user=>{
-	// 			console.log(user, 'user');
-	// 			expect(user).toBe(null);
-	// 		});
-	// 	});
-	// 	it('should return user if has user', ()=>{
-	// 		const mockUser: IUser = { firstName: 'Joe', lastName: 'Admin', email: 'Joe@joes.com', password: 'passForJoe', isAdmin: true };
-	// 		service['user'] = new BehaviorSubject<IUser | null>(mockUser);
-	// 		service.getUser().subscribe( user=>{
-	// 			console.log(user, 'user');
-	// 			expect(user).toEqual(mockUser);
-	// 			expect(user?.firstName).toEqual(mockUser.firstName);
-	// 		});
-	// 	});		
-	// });
-	// describe('Return isAdmin', ()=>{
-	// 	it('should return isAdmin true correctly', ()=>{
-	// 		const mockUser: IUser = { firstName: 'Joe', lastName: 'Admin', email: 'Joe@joes.com', password: 'passForJoe', isAdmin: true };
-	// 		service['user'] = new BehaviorSubject<IUser | null>(mockUser);
-	// 		let result = service.isAdmin();
-	// 		expect(result).toBe(true);
-	// 	})		
-	// })
-	// describe('login', ()=>{
-	// 	it('should log in a user', ()=>{
-	// 		const credentials: IUserCredentials = {email:'Joe@joes.com', password:'passForJoe'};
-	// 		const canLogIn = service.logIn(credentials);
-	// 		expect(canLogIn).toBe(true);
-	// 		const isLoggedIn = service.isLoggedIn();
-	// 		expect(isLoggedIn).toBe(true);			
-	// 	})				
-	// });
-	// describe('logOut', () => {
-	//     it('should log out the current user', () => {
-	//       const mockUser: IUser = { firstName: 'Joe', lastName: 'Admin', email: 'Joe@joes.com', password: 'passForJoe', isAdmin: true };
-	//       service['user'].next(mockUser); //user is private to the UserService and CoPilot said this is not recommended, although it works.
+	describe('GetUser', () => {
+		it('should return null if no user', () => {
+			service.getUser().subscribe(user => {
+				expect(user).toBe(null);
+			});
+		});
+		it('should return user if has user', () => {
+			const mockUser: IUser = { firstName: 'Joe', lastName: 'Admin', email: 'Joe@joes.com', password: 'passForJoe', isAdmin: true };
+			service['user'] = new BehaviorSubject<IUser | null>(mockUser);
+			service.getUser().subscribe(user => {
+				expect(user).toEqual(mockUser);
+				expect(user?.firstName).toEqual(mockUser.firstName);
+			});
+		});
+	});
+	describe('Return isAdmin', () => {
+		it('should return isAdmin true correctly', () => {
+			const mockUser: IUser = { firstName: 'Joe', lastName: 'Admin', email: 'Joe@joes.com', password: 'passForJoe', isAdmin: true };
+			service['user'] = new BehaviorSubject<IUser | null>(mockUser);
+			let result = service.isAdmin();
+			expect(result).toBe(true);
+		})
+	})
+	describe('login', () => {
+		it('should log in a user', () => {
+			const credentials: IUserCredentials = { email: 'Joe@joes.com', password: 'passForJoe' };
+			const canLogIn = service.logIn(credentials);
+			expect(canLogIn).toBe(true);
+			const isLoggedIn = service.isLoggedIn();
+			expect(isLoggedIn).toBe(true);
+		})
+	});
+	describe('logOut', () => {
+		it('should log out the current user', () => {
+			const mockUser: IUser = { firstName: 'Joe', lastName: 'Admin', email: 'Joe@joes.com', password: 'passForJoe', isAdmin: true };
+			service['user'].next(mockUser); //user is private to the UserService and CoPilot said this is not recommended, although it works.
 
-	//       service.logOut();
+			service.logOut();
 
-	//       expect(service['user'].getValue()).toBeNull();
-	//     });
-	//   });
+			expect(service['user'].getValue()).toBeNull();
+		});
+	});
 });

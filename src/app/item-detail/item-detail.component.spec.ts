@@ -19,7 +19,7 @@ describe('ItemDetailComponent', () => {
 	let activatedRoute: ActivatedRoute;
 
 	//set data
-	const mockItem: IItem = {id: 1,name: 'Item 1',description: 'Description 1',price: 10,category: 'Category 1',catgegoryIcon: true,imageUrl: 'image1.jpg'};
+	const mockItem: IItem = { id: 1, name: 'Item 1', description: 'Description 1', price: 10, category: 'Category 1', catgegoryIcon: true, imageUrl: 'image1.jpg' };
 
 	beforeEach(async () => {
 		//create spies
@@ -67,42 +67,42 @@ describe('ItemDetailComponent', () => {
 		expect(component).toBeTruthy();
 	});
 
-	// it('should initialize item on ngOnInit', () => {
-	// 	fixture.detectChanges();
-	// 	expect(component.item).toEqual(mockItem);
-	// 	expect(itemsService.getItem).toHaveBeenCalledWith(mockItem.id);
-	// });
+	it('should initialize item on ngOnInit', () => {
+		fixture.detectChanges();
+		expect(component.item).toEqual(mockItem);
+		expect(itemsService.getItem).toHaveBeenCalledWith(mockItem.id);
+	});
 
-	// it('should navigate to catalog if no itemId is present', () => {
-	// 	const routerSpy = TestBed.inject(Router) as jasmine.SpyObj<Router>;
-	// 	TestBed.inject(ActivatedRoute).snapshot.params['id'] = undefined;
-	// 	component.ngOnInit();
-	// 	expect(routerSpy.navigate).toHaveBeenCalledWith(['/catalog']);
-	// });
+	it('should navigate to catalog if no itemId is present', () => {
+		const routerSpy = TestBed.inject(Router) as jasmine.SpyObj<Router>;
+		TestBed.inject(ActivatedRoute).snapshot.params['id'] = undefined;
+		component.ngOnInit();
+		expect(routerSpy.navigate).toHaveBeenCalledWith(['/catalog']);
+	});
 
-	// it('should add item to cart and navigate to catalog on buy', () => {
-	// 	component.item = mockItem;
-	// 	component.buy();
-	// 	expect(cartService.add).toHaveBeenCalledWith(mockItem);
-	// 	expect(router.navigate).toHaveBeenCalledWith(['/catalog']);
-	// });
+	it('should add item to cart and navigate to catalog on buy', () => {
+		component.item = mockItem;
+		component.buy();
+		expect(cartService.add).toHaveBeenCalledWith(mockItem);
+		expect(router.navigate).toHaveBeenCalledWith(['/catalog']);
+	});
 
-	// it('should unsubscribe from all subscriptions on ngOnDestroy', () => {
-	// 	const subscriptionSpy = spyOn(component.subscriptions, 'unsubscribe');
-	// 	component.ngOnDestroy();
-	// 	expect(subscriptionSpy).toHaveBeenCalled();
-	// });
+	it('should unsubscribe from all subscriptions on ngOnDestroy', () => {
+		const subscriptionSpy = spyOn(component.subscriptions, 'unsubscribe');
+		component.ngOnDestroy();
+		expect(subscriptionSpy).toHaveBeenCalled();
+	});
 
-	// it('should show item imageurl in template', () => {
-	// 	component.item = mockItem;
-	// 	fixture.detectChanges();
-	// 	const compiled = fixture.nativeElement;
-	// 	const img = compiled.querySelector('.itemImage');
-	// 	let found = false;
-	// 	if (img && img.src && img.src.indexOf(mockItem.imageUrl) > -1){
-	// 		found = true;
-	// 	}	
-	// 	expect(found).toBe(true);	
-	// });
+	it('should show item imageurl in template', () => {
+		component.item = mockItem;
+		fixture.detectChanges();
+		const compiled = fixture.nativeElement;
+		const img = compiled.querySelector('.itemImage');
+		let found = false;
+		if (img && img.src && img.src.indexOf(mockItem.imageUrl) > -1) {
+			found = true;
+		}
+		expect(found).toBe(true);
+	});
 
 });

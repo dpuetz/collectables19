@@ -7,13 +7,15 @@
 		<div class="mb-3">
 			<input type="email" required email class="form-control" #email="ngModel" name="email" id="email"
 				[(ngModel)]="credentials.email" aria-describedby="emailHelp" placeholder="Email address"
-				(input)="showLogInError = false" />		
-			<em id="emailRequired" class="error" *ngIf="email.errors?.['required'] && email.touched">Email is required</em>
-			<em id="emailValid" class="error" *ngIf="email.errors?.['email'] && email.touched">Must be a valid email</em>				
-		
+				(input)="showLogInError = false" />
+			<em id="emailRequired" class="error" *ngIf="email.errors?.['required'] && email.touched">Email is
+				required</em>
+			<em id="emailValid" class="error" *ngIf="email.errors?.['email'] && email.touched">Must be a valid
+				email</em>
+
 		</div>
 		<div class="mb-3">
-			<input type="password" required class="form-control" #password="ngModel" name="password" id="password" 
+			<input type="password" required class="form-control" #password="ngModel" name="password" id="password"
 				[(ngModel)]="credentials.password" placeholder="Password" (input)="showLogInError = false" />
 			<em class="password]Required" *ngIf="password.invalid && password.touched">Password is required</em>
 		</div>

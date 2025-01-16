@@ -33,37 +33,37 @@ describe('PriceChangeComponent', () => {
 	it('should test PriceChangeComponent', () => {
 		expect(1).toBe(1);
 	});
-	// it('should create', () => {
-	// 	expect(component).toBeTruthy();
-	// });
-	// it('should items on init', () => {
-	// 	component.ngOnInit();
-	// 	expect(component.items).toEqual(items);
-	// });
-	// it('should call setInitialPrice when onItemChange is called', () => {
-	// 	spyOn(component, 'setInitialPrice');
-	// 	component.onItemChange();
-	// 	expect(component.setInitialPrice).toHaveBeenCalled();
-	// });
-	// it('should change initialPrice when setInitialPrice is called', () => {
-	// 	component.selectedItem.price = 543;
-	// 	component.setInitialPrice();
-	// 	expect(component.initialPrice).toBe(543);
-	// });
-	// it('should round off selectedItem in formatPrice', () => {
-	// 	component.selectedItem.price = 5.999999;
-	// 	component.formatPrice();
-	// 	expect(component.selectedItem.price).toBe(6);
-	// });
-	// it('should call itemsService.saveItem on save', () => {
-	// 	spyOn(component, 'setInitialPrice');
-	// 	component.save();
-	// 	expect(itemsService.saveItem).toHaveBeenCalled();
-	// 	expect(component.setInitialPrice).toHaveBeenCalled();
-	// });
-	// it('should unsubscribe on ngOnDestroy', () => {
-	// 	spyOn(component.subscriptions, 'unsubscribe');
-	// 	component.ngOnDestroy();
-	// 	expect(component.subscriptions.unsubscribe).toHaveBeenCalled();
-	// });
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
+	it('should items on init', () => {
+		component.ngOnInit();
+		expect(component.items).toEqual(items);
+	});
+	it('should call setInitialPrice when onItemChange is called', () => {
+		spyOn(component, 'setInitialPrice');
+		component.onItemChange();
+		expect(component.setInitialPrice).toHaveBeenCalled();
+	});
+	it('should change initialPrice when setInitialPrice is called', () => {
+		component.selectedItem.price = 543;
+		component.setInitialPrice();
+		expect(component.initialPrice).toBe(543);
+	});
+	it('should round off selectedItem in formatPrice', () => {
+		component.selectedItem.price = 5.999999;
+		component.formatPrice();
+		expect(component.selectedItem.price).toBe(6);
+	});
+	it('should call itemsService.saveItem on save', () => {
+		spyOn(component, 'setInitialPrice');
+		component.save();
+		expect(itemsService.saveItem).toHaveBeenCalled();
+		expect(component.setInitialPrice).toHaveBeenCalled();
+	});
+	it('should unsubscribe on ngOnDestroy', () => {
+		spyOn(component.subscriptions, 'unsubscribe');
+		component.ngOnDestroy();
+		expect(component.subscriptions.unsubscribe).toHaveBeenCalled();
+	});
 });

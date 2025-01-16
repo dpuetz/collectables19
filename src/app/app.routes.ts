@@ -33,11 +33,9 @@ export const routes: Routes = [
 				const userService = inject(UserService);
 				const router = inject(Router)
 				if (userService.isAdmin()) {
-					console.log('is admin routes');
 					return true;
 				} else {
 					router.navigate(['/not-auth']);
-					console.log('not admin routes');
 					return false;
 				}
 			}

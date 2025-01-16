@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 		private userService: UserService,
 		private router: Router,
 		private cartService: CartService,
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.subscriptions.add(
@@ -36,10 +36,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	isAdmin(): boolean {
 		return this.userService.isAdmin();
-	}	
+	}
 
 	logOut() {
-		console.log('header logged out');
 		this.userService.logOut();
 		this.router.navigate(['/home']);
 	}

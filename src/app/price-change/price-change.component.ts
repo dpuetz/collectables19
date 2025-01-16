@@ -27,7 +27,7 @@ export class PriceChangeComponent implements OnInit, OnDestroy {
 				next: (items) => {
 					this.items = items;
 				},
-				error: (err) => console.log(err),
+				error: (err) => (err),
 			}));
 	}
 
@@ -37,16 +37,14 @@ export class PriceChangeComponent implements OnInit, OnDestroy {
 
 	setInitialPrice() {
 		this.initialPrice = this.selectedItem.price;
-	}	
+	}
 
 	formatPrice() {
 		this.selectedItem.price = Math.round(this.selectedItem.price * 100) / 100;
 	}
 
 	save() {
-
 		this.subscriptions.add(
-			
 			this.itemsService.saveItem(this.selectedItem).subscribe({
 				next: (item) => {
 					this.setInitialPrice();
