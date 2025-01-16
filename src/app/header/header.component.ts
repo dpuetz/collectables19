@@ -40,9 +40,17 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
 	logOut() {
 		this.userService.logOut();
+		this.toggleNavbar();
 		this.router.navigate(['/home']);
 	}
 
+	toggleNavbar() {
+		const navbarToggle = document.querySelector('.navbar-toggler') as HTMLElement;
+		if (navbarToggle.getAttribute('aria-expanded') === 'true') {
+			navbarToggle.click();
+		}
+	}
+	
 	ngOnDestroy(): void {
 		this.subscriptions.unsubscribe();
 	}

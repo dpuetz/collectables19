@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
 	<div class="container-fluid">
-		<a class="navbar-brand" routerLink="/home">
+		<a class="navbar-brand" routerLink="/home" (click)="toggleNavbar()">
 			<span class="collectibles">Collectables!</span>
 		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
@@ -11,22 +11,26 @@
 			<ul class="navbar-nav me-auto mb-2 mb-md-0">
 				<li class="nav-item">
 					<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/home"
-						routerLinkActive="activeLink">Home</a>
+						routerLinkActive="activeLink"
+						(click)="toggleNavbar()">Home</a>
 				</li>
 
 				<li class="nav-item">
 					<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/catalog"
-						routerLinkActive="activeLink">Catalog</a>
+						routerLinkActive="activeLink"
+						(click)="toggleNavbar()">Catalog</a>
 				</li>
 				<li class="nav-item " *ngIf="isAdmin()">
 					<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/price"
-						routerLinkActive="activeLink">Price Change Manager</a>
+						routerLinkActive="activeLink"
+						(click)="toggleNavbar()">Price Change Manager</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav  pe-1">
 				<li class="nav-item position-relative pe-4">
 					<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/cart/review"
-						routerLinkActive="activeLink">
+						routerLinkActive="activeLink"
+						(click)="toggleNavbar()">
 						<i class="bi bi-cart"></i>
 						<span class="badge rounded-pill bg-danger cartBadge" *ngIf="numberCartItems>0">
 							{{ numberCartItems }}
@@ -35,7 +39,8 @@
 				</li>
 				<li class="nav-item" *ngIf="!isLoggedIn()">
 					<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/login"
-						routerLinkActive="activeLink">Login</a>
+						routerLinkActive="activeLink"
+						(click)="toggleNavbar()">Login</a>
 				</li>
 				<li class="hidden-xs collapse navbar-collapse pe-2" *ngIf="isLoggedIn()">
 					<span class="hiUser">Hi {{user?.firstName}}!</span>
