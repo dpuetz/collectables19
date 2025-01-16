@@ -1,0 +1,10 @@
+.categoryIcons {
+	margin-left: 6px;
+	margin-top: 10px;
+}
+
+img.catalogImage {
+	height: auto;
+	width: 70px;
+	border-radius: 5px;
+}

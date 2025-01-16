@@ -1,0 +1,31 @@
+<div class="container pt-3">
+	<div class="pageTitle">
+		Angular 19 Demo <a class="subTitle" href="https://github.com/dpuetz/collectables">See GitHub Repo</a>
+	</div>
+	<div class="row  g-0">
+		<div class="col-md-7 p-sm-3 text-center">
+			<a routerLink="/catalog"><img src="assets/all/home.jpg" class="homeImage"
+					alt="Collectables! Home Page" /></a>
+		</div>
+		<div class="col-md-5">
+			<div class="p-sm-3">
+				<h1>Great Stuff</h1>
+				<p>At <span class="collectibles">Collectibles!</span> Antique Mall, our eclectic collection invites you
+					to explore unique finds and timeless pieces.
+					Explore our ever-changing selection and discover the perfect piece to spark joy and enrich your
+					collection.</p>
+			</div>
+			<div class="d-flex justify-content-evenly d-wrap p-3">
+				<div *ngFor="let item of items">
+					<div class="text-center">
+						<button class="imgGroup" routerLink="/catalog" [queryParams]="{filter: item.category}">
+							<img class="itemImage" [src]="'assets/' + item.category + '/' + item.imageUrl"
+								[alt]="item.name" />
+							<div class="text-center text-capitalize">{{item.category}}</div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

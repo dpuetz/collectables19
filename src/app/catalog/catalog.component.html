@@ -1,0 +1,15 @@
+<div class="container">
+	<h1>Catalog</h1>
+	<div class="d-flex text-center pb-1">
+		<div *ngFor="let item of getCategoryIcons()" class="categoryIcons">
+			<div class="text-center">
+				<button class="imgGroup" (click)="setFilter(item.category)">
+					<img class="catalogImage" [ngSrc]="'assets/' + item.category + '/' + item.imageUrl" width="70"
+						height="70" [alt]="item.category" />
+					<div class="caption text-capitalize">{{item.category}}</div>
+				</button>
+			</div>
+		</div>
+	</div>
+	<app-items-list [items]="filteredItems"></app-items-list>
+</div>

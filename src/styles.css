@@ -1,1 +1,108 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/css/bootstrap-material-theme.min.css';
+
+.btn.btn-sm {
+	font-size: small;
+	padding: 2px 6px;
+	text-transform: capitalize;
+}
+
+.container {
+	margin-bottom: 30px;
+	margin-top: 75px;
+}
+
+.imgGroup {
+	color: rgba(13, 110, 253, .8);
+	border: none;
+	background-color: transparent;
+}
+
+.imgGroup:hover {
+	color: rgb(8, 92, 218);
+}
+
+.itemImage {
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+.itemDiv {
+	width: 25%;
+	min-width: 25%;
+	font-size: 18px;
+	padding: 6px;
+}
+
+em.error {
+	padding: 2px 5px;
+	background-color: #d25ca1;
+	color: white;
+	font-style: normal;
+}
+
+.pageTitle {
+	font-size: 30px;
+	padding-left: 15px;
+	padding-right: 25px;
+}
+.pageTitle .subTitle {
+	font-size:.85em;
+	padding-left:20px;
+	text-decoration:none;
+}
+
+.fontSize,
+.checkoutItems table td {
+	font-size: 24px;
+}
+
+@media (max-width: 1200px) {
+	.pageTitle {
+		font-size: 24px;
+	}
+
+	.itemDiv {
+		font-size: 16px;
+		padding: 5px;
+	}
+
+	.fontSize,
+	.checkoutItems table td {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 992px) {
+	.pageTitle {
+		font-size: 20px;
+	}
+
+	.itemDiv {
+		font-size: 14px;
+		padding: 4px;
+	}
+
+	.fontSize,
+	.checkoutItems table td {
+		font-size: 18px;
+	}
+}
+
+@media (max-width: 768px) {
+	.pageTitle {
+		/* background-color: orange; */
+		font-size: 18px;
+	}
+
+	.itemDiv {
+		font-size: 12px;
+		padding: 3px;
+	}
+
+	.fontSize,
+	.checkoutItems table td {
+		font-size: 16px;
+	}
+}

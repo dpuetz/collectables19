@@ -1,0 +1,18 @@
+<div class="container pt-3">
+	<h1>{{item.name}}</h1>
+	<div class="row g-0">
+		<div class="col-md-6 pe-3 pb-3">
+			<img class="itemImage" [ngStyle]="{'width':getImageWidth()}"
+				[src]="'assets/' + item.category + '/' + item.imageUrl" [alt]="item.name" (click)="resizeImage()" />
+		</div>
+		<div class="col-md-6">
+			<div class="itemInfo">
+				<p>{{item.description}}</p>
+				<div class="d-flex pt-3">
+					<p class="">{{item.price | currency:'USD'}}</p>
+					<button class="btn btn-primary ms-5" (click)="buy()">Add to Cart</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

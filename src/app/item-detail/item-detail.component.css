@@ -1,0 +1,15 @@
+.itemImage {
+	height: auto;
+	margin-right: 20px;
+	border-radius: 5px;
+}
+
+.itemInfo {
+	min-width: 25%;
+	max-width: 85%;
+	margin-top: 10px;
+}
+
+.itemInfo h1 {
+	font-size: 18px;
+}

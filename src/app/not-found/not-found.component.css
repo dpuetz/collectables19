@@ -1,0 +1,17 @@
+.notFoundContainer {
+	text-align: center
+}
+
+.notFoundMessage {
+	background-color: rgba(34, 156, 252, .9);
+	color: aliceblue;
+	padding: 40px;
+	margin-top: 20px;
+	border-radius: 5px;
+	margin-bottom:30px;
+}
+
+.seeCatalog {
+	font-size: 1.3em;
+	margin-bottom: 1em;
+}

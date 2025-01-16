@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" routerLink="/home">
+			<span class="collectibles">Collectables!</span>
+		</a>
+	  <button class="navbar-toggler" 
+		type="button" 
+		data-bs-toggle="collapse" 
+		data-bs-target="#navbarContent" 
+		aria-controls="navbarContent" 
+		aria-expanded="false" 
+		aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarContent">
+		<ul class="navbar-nav me-auto mb-2 mb-md-0">
+			<li class="nav-item">
+				<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/home"
+					routerLinkActive="activeLink">Home</a>
+			</li>
+
+			<li class="nav-item">
+				<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/catalog"
+					routerLinkActive="activeLink">Catalog</a>
+			</li>
+			<li class="nav-item " *ngIf="isAdmin()">
+				<a class="nav-link" ariaCurrentWhenActive="page" 
+				routerLink="/price" 
+				routerLinkActive="activeLink"
+				>Price Change Manager</a>
+			</li>	
+			<!-- <li class="nav-item ">
+				<a class="nav-link" ariaCurrentWhenActive="page" 
+				routerLink="/price" 
+				routerLinkActive="activeLink"
+				>Price  TESTAuth</a>
+			</li>	
+			<li class="nav-item ">
+				<a class="nav-link" ariaCurrentWhenActive="page" 
+				routerLink="/not existing" 
+				routerLinkActive="activeLink"
+				>TEST not exist</a>
+			</li>										 -->
+		</ul>	
+		<ul class="navbar-nav  pe-1">
+			<li class="nav-item position-relative pe-4">
+				<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/cart/review"
+					routerLinkActive="activeLink">
+					<i class="bi bi-cart"></i>
+					<span class="badge rounded-pill bg-danger cartBadge" *ngIf="numberCartItems>0">
+						{{ numberCartItems }}
+					</span>
+				</a>
+			</li>			
+			<li class="nav-item" *ngIf="!isLoggedIn()">
+				<a class="nav-link" ariaCurrentWhenActive="page" routerLink="/login"
+					routerLinkActive="activeLink">Login</a>
+			</li>			
+			<li class="hidden-xs collapse navbar-collapse pe-2" *ngIf="isLoggedIn()">			
+					<span class="hiUser" >Hi {{user?.firstName}}!</span>			
+			</li>
+			<li class="nav-item " *ngIf="isLoggedIn()">
+				<button class="nav-link" ariaCurrentWhenActive="page" (click)="logOut()">Log Out</button>
+			</li>						
+		</ul>					
+	
+	  </div>
+	</div>
+  </nav>
+  

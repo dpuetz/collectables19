@@ -1,0 +1,19 @@
+.homeImage {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.itemImage {
+	width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: rgba(13, 110, 253, .8);
+	font-style: italic;
+}
+
+a:hover {
+	color: rgba(13, 110, 253, 1);
+}

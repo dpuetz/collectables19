@@ -1,0 +1,38 @@
+<div class="container pt-3">
+	<h1 class="pb-2">Price Change</h1>
+	<form #priceChangeForm="ngForm" class="form" (ngSubmit)="save()">
+		<div class="mb-3 w-50">
+			<select [(ngModel)]="selectedItem" name="selectedItem" class="form-select" aria-label="Items"
+				(ngModelChange)="onItemChange()">
+				<option [ngValue]="newItem" [selected]="selectedItem && selectedItem.id === 0">Select item</option>
+				<option *ngFor="let item of items" [ngValue]="item">{{item.name}}</option>
+			</select>
+		</div>
+		<div class="d-flex" *ngIf="selectedItem && selectedItem.id > 0">
+			<div class="mb-3">
+				<label for="previous" class="form-label">Old price:</label>
+				<div class="input-group mb-3">
+					<span class="input-group-text">$</span>
+					<input type="number" id="previous" readonly class="form-control" name="selectedItemPriceCurrent"
+						aria-label="Current Amount" [ngModel]="initialPrice" />
+				</div>
+			</div>
+			<div class="mb-3 ps-5">
+				<label for="next" class="form-label">New price:</label>
+				<div class="input-group mb-3">
+					<span class="input-group-text">$</span>
+					<input type="number" id="next" name="selectedItemPrice" #selectedItemPrice="ngModel"
+						[(ngModel)]="selectedItem.price" (blur)=formatPrice(); class="form-control"
+						aria-label="Current Amount" />
+
+				</div>
+				<em class='error' *ngIf="selectedItemPrice.touched && selectedItemPrice.value === 0">Item price must be
+					greater than 0.</em>
+			</div>
+		</div>
+		<div class="mb-3" *ngIf="selectedItem && selectedItem.id > 0">
+			<button type="submit" [disabled]="!selectedItem || selectedItem.price===0"
+				class='btn btn-primary'>Save</button>
+		</div>
+	</form>
+</div>

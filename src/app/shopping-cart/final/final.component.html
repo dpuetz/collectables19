@@ -1,0 +1,40 @@
+<div class="container">
+	<h1>
+		Check Out
+	</h1>
+	<div class="row g-0">
+		<div class="col-sm-6 ">
+			<table class="table table-sm ">
+				<tbody>
+					<tr *ngFor="let item of cart">
+						<td class="">
+							<img class="checkoutImage" [ngSrc]="'assets/' + item.category + '/' + item.imageUrl"
+								width="120" height="120" [alt]="item.name" />
+						</td>
+						<td class="text-center text-capitalize align-middle">
+							{{item.name}}
+						</td>
+						<td class="text-center align-middle">
+							{{item.price|currency:'USD'}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-sm-6">
+			<div class="ps-2 checkoutTotal" *ngIf="!showNoItems">
+				<div class="checkoutBorder">
+					<div class="pb-2 fontSize">
+						Cart Total:
+					</div>
+					<div class="pb-2 fontSize">
+						{{cartTotal | currency:'USD'}}
+					</div>
+					<form (ngSubmit)="checkout()" class="mt-4">
+						<button type="submit" class="btn btn-primary">Check Out</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

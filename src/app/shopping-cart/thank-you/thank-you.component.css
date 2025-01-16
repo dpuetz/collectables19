@@ -1,0 +1,46 @@
+.thanksContainer {
+	text-align: center
+}
+
+.thanks {
+	background-color: rgba(34, 156, 252, .9);
+	color: aliceblue;
+	padding: 40px;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+
+.gift {
+	font-size: 1.3em;
+}
+
+.amtOff {
+	font-size: 3em;
+}
+
+.coupon {
+	font-size: .9em;
+	margin-bottom: 1em;
+}
+
+.couponCode {
+    font-size: 1.3em;
+    border: solid 1px gray;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 25%;
+}
+
+@media (max-width: 600px) {
+    .couponCode {
+        width: 40%; 
+    }
+}
+
+.redeem {
+	margin-bottom: 1em;
+}

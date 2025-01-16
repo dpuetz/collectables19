@@ -1,0 +1,26 @@
+.navbar {
+	background-color: #229CFC;
+}
+
+.nav-link:hover {
+	color:rgba(33, 37, 41, 0.65); 
+}
+
+.collectibles {
+	font-style: italic;
+}
+
+.activeLink {
+	text-decoration:underline;
+}
+
+.hiUser{
+	color: rgba(255, 255, 255, .65);
+}
+
+.cartBadge {
+	position: absolute;
+	left: 20px;
+	font-size: 10px;
+	top: 8px;
+}

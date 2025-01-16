@@ -1,0 +1,25 @@
+  /* .loginComponent{
+	max-width:800px;
+	min-width:100px;
+	margin:10px 20px;
+	margin-right:20px; 
+	margin-left:20px;
+  } */
+
+  .loginTitle {
+  	font-size: 30px;
+  	align-self: center;
+  	color: #555;
+  	padding-bottom: 10px;
+  }
+
+  input.error {
+  	border: 1px solid #d25ca1;
+  }
+
+  .logInError {
+  	margin: 25px 0;
+  	color: #d25ca1;
+  	font-size: 18px;
+  	text-align: center;
+  }

@@ -1,0 +1,19 @@
+.checkoutTotal {
+	text-align: center;
+}
+
+.checkoutBorder {
+	margin: auto auto;
+	border: solid 2px rgba(128, 128, 128, 0.064);
+	border-radius: 5px;
+	padding: 1em;
+	margin: 0px 1em;
+	background-color: rgba(220, 220, 220, 0.349);
+}
+
+.checkoutImage {
+	width: 100%;
+	min-width: 100px;
+	height: auto;
+	border-radius: 5px;
+}

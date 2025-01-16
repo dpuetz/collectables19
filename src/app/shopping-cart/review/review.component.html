@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row g-0" *ngIf="!showNoItems">
+		<div class="col-sm-6">
+			<h1>Cart</h1>
+		</div>
+		<div class="col-sm-6 my-auto text-end">
+			<button type="button" class="btn btn-primary btn-sm mb-1 text-nowrap" (click)=review()>Check
+				Out</button>
+			<button type="button" class="btn btn-primary btn-sm ms-4 mb-1 text-nowrap" routerLink="/catalog">Continue
+				shopping</button>
+		</div>
+	</div>
+	<div>
+		<div class="row g-0 mt-1">
+			<app-items-list [items]="cart" [removable]="true" (removeItem)="remove($event)"></app-items-list>
+			<div class="fontSize text-center" *ngIf="showNoItems">
+				<h1 class="noItemsMessage">You have no items in your cart!</h1>
+				<div class="seeCatalog">
+					Go shopping!
+				</div>
+				<div>
+					<button routerLink="/catalog" class="btn btn-primary">Shop Now</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 
+	<div class="container fontSize notAuthorizedContainer">
+		<div class="notAuthorizedMessage">
+			<h1>Sorry!</h1>
+			<div class="notAuthorizedSubheader">
+				You are unauthorized to view that page.
+			</div>
+		</div>
+		<div class="seeCatalog">
+			Go shopping!
+		</div>
+		<div>
+			<button routerLink="/catalog" class="btn btn-primary">Shop Now</button>
+		</div>
+	</div> -->
