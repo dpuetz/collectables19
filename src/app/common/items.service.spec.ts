@@ -1,7 +1,8 @@
 import { TestBed } from "@angular/core/testing";
 import { IItem } from "./IItem.model";
 import { ItemsService } from "./items.service";
-import { HttpClientTestingModule, HttpTestingController } from "@angular/common/http/testing";
+import { provideHttpClient } from "@angular/common/http";
+import { HttpTestingController, provideHttpClientTesting } from "@angular/common/http/testing";
 
 describe('ItemsService', () => {
   let service: ItemsService;
@@ -10,8 +11,11 @@ describe('ItemsService', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [ItemsService],
+      providers: [
+        ItemsService,
+        provideHttpClient(),
+		provideHttpClientTesting(),
+      ],
     }).compileComponents();
 
     service = TestBed.inject(ItemsService);
